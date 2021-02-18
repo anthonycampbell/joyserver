@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table, th, td {
+  border: 1px solid black;
+  width: auto;
+  border-collapse: collapse;
+}
+
+tbody:last-child{
+  width: 100%;
+}
+
+input[type=submit]{
+  width: 100%;
+}

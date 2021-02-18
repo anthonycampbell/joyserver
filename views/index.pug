@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    each subject in subjects
+      li
+        a(href=subject.url) #{subject.title}
+    else
+      p='There are no subjects'
+

@@ -1,0 +1,49 @@
+extends layout
+block content
+    h1=title
+    table
+        tbody
+            tr
+                each field in subject.fields
+                    th #{field}
+                else 
+                    p= 'no fields'
+
+            each entry in entries
+                tr
+                    each value in entry.values
+                        td #{value}
+                    else 
+                        p='no entries'
+            form(type="post" action="" onSubmit="return isClicked(event)")
+                tr
+                    each field in subject.fields
+                        td
+                            input(type='text' placeholder=field required=true)
+                    else
+                        p='no fields'
+                tr
+                    td(colspan=subject.fields.length)
+                        input(type='submit')
+    script.
+        var inputs = document.querySelectorAll("input")
+            for (var i = 0; i < inputs.length; i++){
+                inputs[i].addEventListener('keydown', function(e){
+                    if(e.keyCode === 13){
+                        e.preventDefault();
+                        var tr = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        var td2 = document.createElement("td");
+                        var name = document.createElement("input");
+                        var desc = document.createElement("input");
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        td1.appendChild(name);
+                        td2.appendChild(desc);
+                        document.querySelector('tbody').lastChild.insertAdjacentElement('beforebegin',tr);
+                    }
+                });
+            }
+        document.querySelector('input[type=submit]').addEventListener('click', function(e){
+            document.querySelector('form').submit();
+        });
