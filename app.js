@@ -42,6 +42,7 @@ var corsOpts = {
   allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json,Access-Control-Request-Method,Access-Control-Request-Headers'
 }
 app.use(cors(corsOpts));
+app.options('*', cors())
 
 //
 app.use(logger('dev'));
