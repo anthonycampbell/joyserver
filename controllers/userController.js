@@ -75,7 +75,6 @@ exports.login = [
     validator.sanitizeBody('email').normalizeEmail(),
     //process request
     (req, res, next) => {
-        res.set('Access-Control-Allow-Origin', '*');
         const errors = validator.validationResult(req);
         if (!errors.isEmpty()){
             return res.status(400).json(errors);
