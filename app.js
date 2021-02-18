@@ -8,7 +8,8 @@ var passport = require('passport');
 var app = express();
 var WebSocket = require('ws');
 var ShareDB = require('sharedb');
-var mongoDB = 'mongodb+srv://anthony:ArchieComics9@cluster0-hh67p.azure.mongodb.net/harry_potter?retryWrites=true&w=majority';
+var dev_db_url = 'mongodb+srv://anthony:ArchieComics9@cluster0-hh67p.azure.mongodb.net/harry_potter?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 var smdb = require('sharedb-mongo')(mongoDB, {mongoOptions: {useNewUrlParser: true, useUnifiedTopology: true}});
 
 var wssChat = new WebSocket.Server({ noServer: true });
