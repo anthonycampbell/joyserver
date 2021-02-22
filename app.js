@@ -36,7 +36,8 @@ require('./config/passport')(passport);
 // cors
 var corsOpts = {
   origin: 'https://calm-tundra-99790.herokuapp.com',
-  credentials: true
+  credentials: true,
+  allowedHeaders: true
 }
 app.use(cors(corsOpts));
 
