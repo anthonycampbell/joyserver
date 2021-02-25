@@ -11,24 +11,6 @@ var ShareDB = require('sharedb');
 var dev_db_url = 'mongodb+srv://anthony:ArchieComics9@cluster0-hh67p.azure.mongodb.net/harry_potter?retryWrites=true&w=majority';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 var smdb = require('sharedb-mongo')(mongoDB, {mongoOptions: {useNewUrlParser: true, useUnifiedTopology: true}});
-var session = require('express-session');
-
-var sessionConfig = {
-  secret: 'MYSECRET',
-  name: 'appName',
-  resave: false,
-  saveUninitialized: false,
-  store: store,
-  cookie : {
-    sameSite: 'none', // THIS is the config you are looing for.
-  }
-};
-
-app.use(session(sessionConfig));
-if (process.env.NODE_ENV === 'production') {
-  app.set('trust proxy', 1); // trust first proxy
-  sessionConfig.cookie.secure = true; // serve secure cookies
-}
 
 var wssChat = new WebSocket.Server({ noServer: true });
 app.wssChat = wssChat;
@@ -55,7 +37,7 @@ require('./config/passport')(passport);
 var corsOpts = {
   origin: 'https://calm-tundra-99790.herokuapp.com',
   credentials: true,
-  allowedHeaders: 'content-type,access-control-allow-origin',
+  allowedHeaders: 'content-type',
   exposedHeaders: 'access-control-allow-origin,access-control-allow-methods,access-control-allow-headers'
 }
 app.use(cors(corsOpts));
