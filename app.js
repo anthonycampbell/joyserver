@@ -38,7 +38,7 @@ var corsOpts = {
   origin: '*',
   allowedHeaders: 'content-type'
 }
-app.use(cors(corsOpts));
+//app.use(cors(corsOpts));
 
 //
 app.use(logger('dev'));
