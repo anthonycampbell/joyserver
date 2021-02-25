@@ -95,7 +95,9 @@ exports.login = [
                                 if (err) {
                                     console.log(err);
                                 }
-                                res.cookie('jwt', token, {sameSite: 'none', secure: true});
+                                res.cookie('jwt', token, {sameSite: 'none',
+                                                          secure: true,
+                                                          domain: 'https://calm-tundra-99790.herokuapp.com'});
                                 res.json({success: true, 'jwt': token});
                             });
                 } else {
