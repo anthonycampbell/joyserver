@@ -95,7 +95,7 @@ exports.login = [
                                 if (err) {
                                     console.log(err);
                                 }
-                                res.cookie('jwt', token);
+                                res.cookie('jwt', token, {sameSite: 'none'});
                                 res.json({success: true, 'jwt': token});
                             });
                 } else {
@@ -107,7 +107,7 @@ exports.login = [
 ]
 
 exports.logout = function(req, res, next){
-    res.clearCookie('jwt');
+    res.clearCookie('jwt', {sameSite: 'none'});
     res.send('cookie cleared');
 }
 
