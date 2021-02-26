@@ -38,7 +38,8 @@ var corsOpts = {
   origin: 'https://calm-tundra-99790.herokuapp.com',
   credentials: true,
   allowedHeaders: 'content-type',
-  exposedHeaders: 'access-control-allow-origin,access-control-allow-methods,access-control-allow-headers'
+  exposedHeaders: 'access-control-allow-origin,access-control-allow-methods,access-control-allow-headers',
+  preflightContinue: true
 }
 app.use(cors(corsOpts));
 
