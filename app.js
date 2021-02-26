@@ -39,7 +39,7 @@ var corsOpts = {
   credentials: true,
   allowedHeaders: 'content-type',
   exposedHeaders: 'access-control-allow-origin,access-control-allow-methods,access-control-allow-headers',
-  preflightContinue: 'true'
+  preflightContinue: true
 }
 app.use(cors(corsOpts));
 
