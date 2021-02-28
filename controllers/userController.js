@@ -97,7 +97,7 @@ exports.login = [
                                 }
                                 res.cookie('jwt', token, {sameSite: 'none',
                                                           secure: true,
-                                                          httpOnly: true});
+                                                          httpOnly: false});
                                 res.json({success: true, 'jwt': token});
                             });
                 } else {
