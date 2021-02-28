@@ -95,9 +95,7 @@ exports.login = [
                                 if (err) {
                                     console.log(err);
                                 }
-                                res.cookie('jwt', token, {sameSite: 'none',
-                                                          secure: true,
-                                                          httpOnly: false});
+                                res.cookie('jwt', token, {sameSite: 'none'});
                                 res.json({success: true, 'jwt': token});
                             });
                 } else {
