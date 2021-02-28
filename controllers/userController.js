@@ -97,7 +97,7 @@ exports.login = [
                                 }
                                 res.cookie('jwt', token, {sameSite: 'none',
                                                           secure: true});
-                                res.send({success: true, 'jwt': token});
+                                res.send('bangin');
                             });
                 } else {
                     return res.status(400).json({passwordIncorrect: "Password incorrect"})
