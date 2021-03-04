@@ -32,7 +32,8 @@ app.use(cookieSession({
   httpOnly: false,
   name: 'session',
   keys: ['key1', 'key2'],
-  sameSite: 'none'
+  sameSite: 'none',
+  maxAge, 31556926
 }))
 
 // view engine setup
