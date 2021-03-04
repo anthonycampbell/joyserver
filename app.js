@@ -27,6 +27,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.set('trust proxy', 1)
 
+app.use(cookieSession({
+  httpOnly: false,
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
