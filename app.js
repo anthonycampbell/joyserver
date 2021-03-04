@@ -33,7 +33,6 @@ app.use(cookieSession({
   name: 'session',
   secret: 'secret',
   sameSite: 'none',
-  domain: 'https://calm-tundra-99790.herokuapp.com/',
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
