@@ -32,7 +32,8 @@ app.use(cookieSession({
   httpOnly: false,
   name: 'session',
   secret: 'secret',
-  sameSite: 'none'
+  sameSite: 'none',
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
 // view engine setup
