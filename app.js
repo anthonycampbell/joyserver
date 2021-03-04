@@ -31,7 +31,7 @@ app.set('trust proxy', 1)
 app.use(cookieSession({
   httpOnly: false,
   name: 'session',
-  keys: ['key1', 'key2'],
+  secret: 'secret',
   sameSite: 'none'
 }))
 
