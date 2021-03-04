@@ -30,7 +30,7 @@ app.set('trust proxy', 1)
 
 app.use(cookieSession({
   httpOnly: true,
-  name: 'session',
+  name: 'jwt',
   secret: 'secret',
   sameSite: 'none',
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
