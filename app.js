@@ -33,6 +33,7 @@ app.use(cookieSession({
   name: 'jwt',
   secret: 'secret',
   sameSite: 'none',
+  secure: true,
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
