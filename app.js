@@ -29,7 +29,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.set('trust proxy', 1)
 
 app.use(cookieSession({
-  httpOnly: false,
   name: 'jwt',
   secret: 'secret',
   sameSite: 'none',
