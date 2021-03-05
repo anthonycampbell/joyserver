@@ -98,7 +98,7 @@ exports.login = [
                                 //res.cookie('jwt', token, {httpOnly: false,
                                 //                          secure: true,
                                 //                          sameSite: 'none'});
-                                //req.session.jwt = token;
+                                req.jwt.jwt = token;
                                 res.json({success: true, 'jwt': token});
                             });
                 } else {
